@@ -1,0 +1,4 @@
+/wire/**        @Boss
+/buses/**       @Boss  
+/designs/**     @Boss
+*.config.*      @Boss
