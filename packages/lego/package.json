@@ -1,0 +1,24 @@
+{
+  "name": "@buda/lego",
+  "version": "1.0.0", 
+  "description": "BUDA LEGO Component Scaffolding - Rule #3 enforcement",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'No build needed'",
+    "test": "vitest"
+  },
+  "keywords": [
+    "lego",
+    "scaffolding", 
+    "buda",
+    "boss-rules"
+  ],
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  },
+  "files": [
+    "src/",
+    "README.md"
+  ]
+}

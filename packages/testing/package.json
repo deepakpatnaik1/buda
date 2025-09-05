@@ -1,0 +1,25 @@
+{
+  "name": "@buda/testing",
+  "version": "1.0.0",
+  "description": "BUDA Testing Utilities - Rule #2 TDD support", 
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'No build needed'",
+    "test": "vitest"
+  },
+  "keywords": [
+    "testing",
+    "tdd",
+    "buda", 
+    "boss-rules"
+  ],
+  "dependencies": {
+    "@testing-library/jest-dom": "^6.8.0",
+    "vitest": "^1.6.1"
+  },
+  "files": [
+    "src/",
+    "README.md"
+  ]
+}

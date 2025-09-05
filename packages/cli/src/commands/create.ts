@@ -152,15 +152,16 @@ async function generateProjectStructure(projectPath: string, config: any) {
       'generate': 'buda generate'
     },
     dependencies: {
-      '@buda/buses': '^1.0.0',
-      '@buda/lego': '^1.0.0'
+      '@buda/buses': '^1.0.0'
     },
     devDependencies: {
       '@buda/eslint-plugin': '^1.0.0',
       'vite': '^5.0.0',
       'vitest': '^1.1.0',
       'eslint': '^8.56.0',
-      'typescript': '^5.3.0'
+      'typescript': '^5.3.0',
+      'svelte': '^4.0.0',
+      '@sveltejs/vite-plugin-svelte': '^3.0.0'
     }
   };
 
@@ -193,6 +194,74 @@ async function generateProjectStructure(projectPath: string, config: any) {
 
   await fs.writeFile(join(projectPath, 'buda.config.js'), budaConfig);
 
-  // Generate basic LEGO components
-  await generateBasicComponents(projectPath, config);
+  // Generate ESLint config that uses BUDA
+  const eslintConfig = `module.exports = {
+  extends: [
+    'eslint:recommended',
+    '@typescript-eslint/recommended',
+    'plugin:svelte/recommended'
+  ],
+  plugins: [
+    '@typescript-eslint',
+    '@buda'
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 2020,
+    extraFileExtensions: ['.svelte']
+  },
+  env: {
+    browser: true,
+    es2017: true,
+    node: true
+  },
+  overrides: [
+    {
+      files: ['*.svelte'],
+      parser: 'svelte-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser'
+      }
+    }
+  ],
+  rules: {
+    // BUDA Boss Rules - loaded from buda.config.js
+    '@buda/require-tests': 'error',
+    '@buda/lego-placement': 'error', 
+    '@buda/bus-decoupling': 'error',
+    '@buda/thin-wrapper': 'warn',
+    '@buda/be-svelte-y': 'warn',
+    '@buda/no-hardcoding': 'warn',
+    '@buda/no-expired-flags': 'error',
+    '@buda/no-silent-failures': 'error'
+  }
+};`;
+
+  await fs.writeFile(join(projectPath, '.eslintrc.cjs'), eslintConfig);
+
+  // Generate basic files  
+  const readmeContent = `# ${config.name || 'buda-project'}
+
+BUDA project with Boss Rules enforcement.
+
+## Getting Started
+
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
+
+## BUDA Commands
+
+- \`buda generate model User\` - Generate LEGO component  
+- \`buda design user-auth\` - Start design-first workflow
+- \`buda audit\` - Check Boss Rules compliance
+- \`buda delete feature\` - Test 30-minute deletion
+
+## Boss Rules Status
+
+This project enforces all 10 Essential Boss Rules through automated tooling.`;
+
+  await fs.writeFile(join(projectPath, 'README.md'), readmeContent);
 }

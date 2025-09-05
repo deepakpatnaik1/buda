@@ -2,8 +2,7 @@
   "name": "@buda/eslint-plugin",
   "version": "1.0.0",
   "description": "ESLint plugin enforcing all 10 Essential Boss Rules",
-  "main": "dist/index.js",
-  "type": "module",
+  "main": "src/index-main.js",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -23,7 +22,8 @@
   },
   "dependencies": {
     "@typescript-eslint/utils": "^6.15.0",
-    "tsutils": "^3.21.0"
+    "tsutils": "^3.21.0",
+    "glob": "^10.0.0"
   },
   "files": [
     "dist/",

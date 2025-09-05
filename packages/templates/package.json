@@ -1,0 +1,22 @@
+{
+  "name": "@buda/templates", 
+  "version": "1.0.0",
+  "description": "BUDA Project Templates with Boss Rules",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'No build needed'",
+    "test": "vitest"
+  },
+  "keywords": [
+    "templates",
+    "buda",
+    "boss-rules",
+    "scaffolding"
+  ],
+  "files": [
+    "designs/",
+    "src/",
+    "README.md"
+  ]
+}

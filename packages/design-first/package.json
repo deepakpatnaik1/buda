@@ -1,0 +1,25 @@
+{
+  "name": "@buda/design-first",
+  "version": "1.0.0",
+  "description": "BUDA Design-First Workflow Tools - Rule #1 enforcement",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'No build needed'",
+    "test": "vitest"
+  },
+  "keywords": [
+    "design-first",
+    "buda", 
+    "boss-rules",
+    "workflow"
+  ],
+  "dependencies": {
+    "glob": "^10.0.0",
+    "fs": "^0.0.1-security"
+  },
+  "files": [
+    "src/",
+    "README.md"
+  ]
+}

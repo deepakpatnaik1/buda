@@ -14,7 +14,7 @@ const __dirname = dirname(__filename);
 const require = createRequire(import.meta.url);
 
 // Import the main CLI application
-import('../dist/index.js').catch((error) => {
+import('../src/index.ts').catch((error) => {
   console.error('Failed to start BUDA CLI:', error);
   process.exit(1);
 });

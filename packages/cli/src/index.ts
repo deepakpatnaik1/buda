@@ -14,7 +14,6 @@ import { generateComponent } from './commands/generate.js';
 import { designWorkflow } from './commands/design.js';
 import { auditProject } from './commands/audit.js';
 import { deleteFeature } from './commands/delete.js';
-import { initProject } from './commands/init.js';
 
 const program = new Command();
 
@@ -49,12 +48,6 @@ program
   .option('--skip-git', 'Skip git initialization')
   .option('--skip-install', 'Skip npm install')
   .action(createProject);
-
-program
-  .command('init')
-  .description('Initialize Boss Rules in an existing project')
-  .option('-f, --force', 'Overwrite existing configuration')
-  .action(initProject);
 
 program
   .command('generate <type> <name>')

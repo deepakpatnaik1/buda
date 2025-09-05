@@ -1,0 +1,19 @@
+{
+  "name": "eslint-plugin-boss",
+  "version": "1.0.0",
+  "description": "ESLint plugin for Essential Boss Rules enforcement",
+  "main": "index.js",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "boss-rules",
+    "architecture",
+    "lego",
+    "svelte"
+  ],
+  "author": "Boss",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  }
+}
