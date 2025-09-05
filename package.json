@@ -1,0 +1,51 @@
+{
+  "name": "@buda/framework",
+  "version": "1.0.0",
+  "description": "Boss Rules Development Architecture - Engineering discipline through tooling",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "buda": "./packages/cli/bin/buda.js"
+  },
+  "scripts": {
+    "dev": "npm run dev --workspace=@buda/cli",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "eslint packages/ --ext .js,.ts,.json",
+    "clean": "npm run clean --workspaces",
+    "release": "changeset publish"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [
+    "framework",
+    "architecture",
+    "boss-rules",
+    "cli",
+    "tooling",
+    "engineering-discipline"
+  ],
+  "author": "BUDA Framework Team",
+  "license": "MIT",
+  "homepage": "https://github.com/deepakpatnaik1/buda",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deepakpatnaik1/buda.git"
+  },
+  "bugs": {
+    "url": "https://github.com/deepakpatnaik1/buda/issues"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@types/node": "^20.10.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

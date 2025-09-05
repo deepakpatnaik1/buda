@@ -1,0 +1,36 @@
+{
+  "name": "@buda/cli",
+  "version": "1.0.0",
+  "description": "BUDA CLI - Boss Rules Development Architecture command-line interface",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "buda": "./bin/buda.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "cli",
+    "buda",
+    "boss-rules",
+    "scaffolding"
+  ],
+  "dependencies": {
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.12",
+    "chalk": "^5.3.0",
+    "ora": "^7.0.1",
+    "fs-extra": "^11.2.0",
+    "@buda/buses": "workspace:*",
+    "@buda/lego": "workspace:*",
+    "@buda/templates": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7"
+  }
+}

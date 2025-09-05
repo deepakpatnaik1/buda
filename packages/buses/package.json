@@ -1,0 +1,46 @@
+{
+  "name": "@buda/buses",
+  "version": "1.0.0",
+  "description": "BUDA 4-Bus Architecture - Event, State, Config, Error buses",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch", 
+    "test": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "buda",
+    "architecture",
+    "buses",
+    "event-bus",
+    "state-management"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./event": {
+      "import": "./dist/EventBus.js",
+      "types": "./dist/EventBus.d.ts"
+    },
+    "./state": {
+      "import": "./dist/StateBus.js", 
+      "types": "./dist/StateBus.d.ts"
+    },
+    "./config": {
+      "import": "./dist/ConfigBus.js",
+      "types": "./dist/ConfigBus.d.ts"
+    },
+    "./error": {
+      "import": "./dist/ErrorBus.js",
+      "types": "./dist/ErrorBus.d.ts"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ]
+}
